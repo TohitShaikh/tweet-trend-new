@@ -2,9 +2,12 @@ pipeline {
     agent {
         node {
             label 'maven'
-            // Use a specific version of Java (e.g., Java 17)
-            tool 'JDK17'
         }
+    }
+
+    tools {
+        // Define the JDK tool named 'JDK17' in the Jenkins Global Tool Configuration
+        jdk 'JDK17'
     }
 
     stages {
@@ -16,7 +19,8 @@ pipeline {
         
         stage('Build-Stage') {
             steps {
-                sh 'mvn clean package'
+                // Use the configured JDK tool
+                sh 'JDK17/bin/mvn clean package'
             }
         }
         
