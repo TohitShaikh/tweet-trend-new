@@ -2,6 +2,8 @@ pipeline {
     agent {
         node {
             label 'maven'
+            // Use a specific version of Java (e.g., Java 17)
+            tool 'JDK17'
         }
     }
 
