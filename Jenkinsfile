@@ -17,6 +17,9 @@ pipeline {
                 sh 'mvn clean package -DskipTests'
             }
         }
+        stage('Unit-Test-Cases') {
+            sh 'mvn surefire-report:report'
+        }
         
         stage('SonarQube analysis') {
             environment {
