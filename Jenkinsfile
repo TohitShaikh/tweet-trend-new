@@ -14,11 +14,17 @@ pipeline {
         
         stage('Build-Stage') {
             steps {
+                echo "-----------buildt-started-------------"
                 sh 'mvn clean package -DskipTests'
+                echo "-----------build-completed-------------"
             }
         }
         stage('Unit-Test-Cases') {
+            steps {
+             echo "-----------unit-test-started-------------"   
             sh 'mvn surefire-report:report'
+            echo "-----------unit-test-completed-------------"
+        }
         }
         
         stage('SonarQube analysis') {
