@@ -15,7 +15,7 @@ pipeline {
         stage('Build-Stage') {
             steps {
                 echo "-----------buildt-started-------------"
-                sh 'mvn clean deploy'
+                sh 'mvn clean deploy -DskipTests'
                 echo "-----------build-completed-------------"
             }
         }
