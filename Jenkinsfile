@@ -52,7 +52,7 @@ pipeline {
                         "files": [
                             {
                                 "pattern": "jarstaging/*",
-                                "target": "tohit-libs-release-local/",
+                                "target": "tohit-libs-release-local/{1}",
                                 "flat": "false",
                                 "props": "${properties}",
                                 "exclusions": ["*.sha1", "*.md5"]
